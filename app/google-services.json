@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1028247279078",
+    "firebase_url": "https://bnform-dd837.firebaseio.com",
+    "project_id": "bnform-dd837",
+    "storage_bucket": "bnform-dd837.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028247279078:android:1147822e50a3fb53cd7227",
+        "android_client_info": {
+          "package_name": "com.consumer.bnform"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028247279078-9quah81vgiq1b967amk6g69rh5q5dq9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdtUMjLzHQOSNAYzTvex9U0fAvEnyT6oU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028247279078-9quah81vgiq1b967amk6g69rh5q5dq9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
