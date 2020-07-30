@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.consumer.bnform.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_alertFragment"
+            app:destination="@id/alertFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alertFragment"
+        android:name="com.consumer.bnform.view.fragments.AlertFragment"
+        android:label="fragment_alert"
+        tools:layout="@layout/fragment_alert" >
+        <action
+            android:id="@+id/action_alertFragment_to_alertsDetailFragment"
+            app:destination="@id/alertsDetailFragment" />
+        <action
+            android:id="@+id/action_alertFragment_to_scanFragment"
+            app:destination="@id/scanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alertsDetailFragment"
+        android:name="com.consumer.bnform.AlertsDetailFragment"
+        android:label="fragment_alerts_detail"
+        tools:layout="@layout/fragment_alerts_detail" />
+    <fragment
+        android:id="@+id/scanFragment"
+        android:name="com.consumer.bnform.ScanFragment"
+        android:label="fragment_scan"
+        tools:layout="@layout/fragment_scan" >
+        <action
+            android:id="@+id/action_scanFragment_to_scanDetailFragment"
+            app:destination="@id/scanDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanDetailFragment"
+        android:name="com.consumer.bnform.ScanDetailFragment"
+        android:label="fragment_scan_detail"
+        tools:layout="@layout/fragment_scan_detail" />
+</navigation>

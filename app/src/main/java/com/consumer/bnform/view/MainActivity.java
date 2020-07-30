@@ -1,8 +1,10 @@
-package com.consumer.bnform;
+package com.consumer.bnform.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.consumer.bnform.R;
 
 public class MainActivity extends AppCompatActivity {
 
