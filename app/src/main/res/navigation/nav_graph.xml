@@ -11,38 +11,38 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_alertFragment"
-            app:destination="@id/alertFragment" />
+            android:id="@+id/action_loginFragment_to_alertFragment_dest"
+            app:destination="@id/alertFragment_dest" />
     </fragment>
     <fragment
-        android:id="@+id/alertFragment"
+        android:id="@+id/alertFragment_dest"
         android:name="com.consumer.bnform.view.fragments.AlertFragment"
         android:label="fragment_alert"
         tools:layout="@layout/fragment_alert" >
         <action
             android:id="@+id/action_alertFragment_to_alertsDetailFragment"
-            app:destination="@id/alertsDetailFragment" />
+            app:destination="@id/alertsDetailFragment_dest" />
         <action
             android:id="@+id/action_alertFragment_to_scanFragment"
-            app:destination="@id/scanFragment" />
+            app:destination="@id/scanFragment_dest" />
     </fragment>
     <fragment
-        android:id="@+id/alertsDetailFragment"
-        android:name="com.consumer.bnform.AlertsDetailFragment"
+        android:id="@+id/alertsDetailFragment_dest"
+        android:name="com.consumer.bnform.view.fragments.AlertsDetailFragment"
         android:label="fragment_alerts_detail"
         tools:layout="@layout/fragment_alerts_detail" />
     <fragment
-        android:id="@+id/scanFragment"
-        android:name="com.consumer.bnform.ScanFragment"
+        android:id="@+id/scanFragment_dest"
+        android:name="com.consumer.bnform.view.fragments.ScanFragment"
         android:label="fragment_scan"
         tools:layout="@layout/fragment_scan" >
         <action
             android:id="@+id/action_scanFragment_to_scanDetailFragment"
-            app:destination="@id/scanDetailFragment" />
+            app:destination="@id/scanDetailFragment_dest" />
     </fragment>
     <fragment
-        android:id="@+id/scanDetailFragment"
-        android:name="com.consumer.bnform.ScanDetailFragment"
+        android:id="@+id/scanDetailFragment_dest"
+        android:name="com.consumer.bnform.view.fragments.ScanDetailFragment"
         android:label="fragment_scan_detail"
         tools:layout="@layout/fragment_scan_detail" />
 </navigation>
