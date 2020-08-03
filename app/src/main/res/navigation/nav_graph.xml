@@ -45,4 +45,9 @@
         android:name="com.consumer.bnform.view.fragments.ScanDetailFragment"
         android:label="fragment_scan_detail"
         tools:layout="@layout/fragment_scan_detail" />
+    <fragment
+        android:id="@+id/scanHistoryFragment_dest"
+        android:name="com.consumer.bnform.ScanHistoryFragment"
+        android:label="fragment_scan_history"
+        tools:layout="@layout/fragment_scan_history" />
 </navigation>
