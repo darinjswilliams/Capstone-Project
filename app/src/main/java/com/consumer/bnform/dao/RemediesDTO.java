@@ -1,4 +1,4 @@
 package com.consumer.bnform.dao;
 
-public interface ProductsDTO {
+public interface RemediesDTO {
 }
