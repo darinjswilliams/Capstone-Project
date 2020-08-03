@@ -1,26 +1,27 @@
-package com.consumer.bnform.dao;
+package com.consumer.bnform.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class RetailersDAO implements Parcelable {
+public class Manufacturers implements Parcelable {
+
     private String name;
     private String companyId;
 
-    protected RetailersDAO(Parcel in) {
+    protected Manufacturers(Parcel in) {
         name = in.readString();
         companyId = in.readString();
     }
 
-    public static final Creator<RetailersDAO> CREATOR = new Creator<RetailersDAO>() {
+    public static final Creator<Manufacturers> CREATOR = new Creator<Manufacturers>() {
         @Override
-        public RetailersDAO createFromParcel(Parcel in) {
-            return new RetailersDAO(in);
+        public Manufacturers createFromParcel(Parcel in) {
+            return new Manufacturers(in);
         }
 
         @Override
-        public RetailersDAO[] newArray(int size) {
-            return new RetailersDAO[size];
+        public Manufacturers[] newArray(int size) {
+            return new Manufacturers[size];
         }
     };
 

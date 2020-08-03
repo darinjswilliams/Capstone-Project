@@ -1,11 +1,11 @@
-package com.consumer.bnform.dao;
+package com.consumer.bnform.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.Date;
 
-public class RecallDAO implements Parcelable {
+public class Recall implements Parcelable {
 
     private Integer id;
 
@@ -23,36 +23,36 @@ public class RecallDAO implements Parcelable {
 
     private String mLastPublishDate;
 
-    private ProductDAO products;
+    private Product products;
 
-    private InconjuctionsDAO mInconjuctions;
+    private Inconjuctions mInconjuctions;
 
-    private ImagesDAO mImage;
+    private Images mImage;
 
-    private InjuriesDAO mInjuries;
+    private Injuries mInjuries;
 
-    private ManufacturersDAO mManufacturers;
+    private Manufacturers mManufacturers;
 
-    private RetailersDAO mRetailers;
+    private Retailers mRetailers;
 
-    private ImportersDAO mImporters;
+    private Importers mImporters;
 
-    private DistributorsDAO mDistributors;
+    private Distributors mDistributors;
 
     private String mSoldAtLabel;
 
-    private ManufacturerCountriesDAO mManufacturerCountries;
+    private ManufacturerCountries mManufacturerCountries;
 
-    private ProductUpcDAO mProductUPC;
+    private ProductUPC mProductUPC;
 
-    private HazardsDAO mHazards;
+    private Hazards mHazards;
 
-    private RemediesDAO mRemedies;
+    private Remedies mRemedies;
 
-    private RemedyOptionsDAO mRemedyOptions;
+    private RemedyOptions mRemedyOptions;
 
 
-    protected RecallDAO(Parcel in) {
+    protected Recall(Parcel in) {
         if (in.readByte() == 0) {
             id = null;
         } else {
@@ -68,31 +68,31 @@ public class RecallDAO implements Parcelable {
         mTitle = in.readString();
         mConsumerContact = in.readString();
         mLastPublishDate = in.readString();
-        products = in.readParcelable(ProductDAO.class.getClassLoader());
-        mInconjuctions = in.readParcelable(InconjuctionsDAO.class.getClassLoader());
-        mImage = in.readParcelable(ImagesDAO.class.getClassLoader());
-        mInjuries = in.readParcelable(InjuriesDAO.class.getClassLoader());
-        mManufacturers = in.readParcelable(ManufacturersDAO.class.getClassLoader());
-        mRetailers = in.readParcelable(RetailersDAO.class.getClassLoader());
-        mImporters = in.readParcelable(ImportersDAO.class.getClassLoader());
-        mDistributors = in.readParcelable(DistributorsDAO.class.getClassLoader());
+        products = in.readParcelable(Product.class.getClassLoader());
+        mInconjuctions = in.readParcelable(Inconjuctions.class.getClassLoader());
+        mImage = in.readParcelable(Images.class.getClassLoader());
+        mInjuries = in.readParcelable(Injuries.class.getClassLoader());
+        mManufacturers = in.readParcelable(Manufacturers.class.getClassLoader());
+        mRetailers = in.readParcelable(Retailers.class.getClassLoader());
+        mImporters = in.readParcelable(Importers.class.getClassLoader());
+        mDistributors = in.readParcelable(Distributors.class.getClassLoader());
         mSoldAtLabel = in.readString();
-        mManufacturerCountries = in.readParcelable(ManufacturerCountriesDAO.class.getClassLoader());
-        mProductUPC = in.readParcelable(ProductUpcDAO.class.getClassLoader());
-        mHazards = in.readParcelable(HazardsDAO.class.getClassLoader());
-        mRemedies = in.readParcelable(RemediesDAO.class.getClassLoader());
-        mRemedyOptions = in.readParcelable(RemedyOptionsDAO.class.getClassLoader());
+        mManufacturerCountries = in.readParcelable(ManufacturerCountries.class.getClassLoader());
+        mProductUPC = in.readParcelable(ProductUPC.class.getClassLoader());
+        mHazards = in.readParcelable(Hazards.class.getClassLoader());
+        mRemedies = in.readParcelable(Remedies.class.getClassLoader());
+        mRemedyOptions = in.readParcelable(RemedyOptions.class.getClassLoader());
     }
 
-    public static final Creator<RecallDAO> CREATOR = new Creator<RecallDAO>() {
+    public static final Creator<Recall> CREATOR = new Creator<Recall>() {
         @Override
-        public RecallDAO createFromParcel(Parcel in) {
-            return new RecallDAO(in);
+        public Recall createFromParcel(Parcel in) {
+            return new Recall(in);
         }
 
         @Override
-        public RecallDAO[] newArray(int size) {
-            return new RecallDAO[size];
+        public Recall[] newArray(int size) {
+            return new Recall[size];
         }
     };
 

@@ -1,14 +1,14 @@
-package com.consumer.bnform.dao;
+package com.consumer.bnform.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class ImagesDAO implements Parcelable {
+public class Images implements Parcelable {
 
     private String url;
     private String caption;
 
-    protected ImagesDAO(Parcel in) {
+    protected Images(Parcel in) {
         url = in.readString();
         caption = in.readString();
     }
@@ -18,15 +18,15 @@ public class ImagesDAO implements Parcelable {
         return 0;
     }
 
-    public static final Creator<ImagesDAO> CREATOR = new Creator<ImagesDAO>() {
+    public static final Creator<Images> CREATOR = new Creator<Images>() {
         @Override
-        public ImagesDAO createFromParcel(Parcel in) {
-            return new ImagesDAO(in);
+        public Images createFromParcel(Parcel in) {
+            return new Images(in);
         }
 
         @Override
-        public ImagesDAO[] newArray(int size) {
-            return new ImagesDAO[size];
+        public Images[] newArray(int size) {
+            return new Images[size];
         }
     };
 

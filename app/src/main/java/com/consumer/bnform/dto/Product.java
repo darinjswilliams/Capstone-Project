@@ -1,9 +1,9 @@
-package com.consumer.bnform.dao;
+package com.consumer.bnform.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class ProductDAO implements Parcelable {
+public class Product implements Parcelable {
 
     private String name;
     private String description;
@@ -12,7 +12,7 @@ public class ProductDAO implements Parcelable {
     private String categoryId;
     private String numOfUnits;
 
-    protected ProductDAO(Parcel in) {
+    protected Product(Parcel in) {
         name = in.readString();
         description = in.readString();
         model = in.readString();
@@ -21,15 +21,15 @@ public class ProductDAO implements Parcelable {
         numOfUnits = in.readString();
     }
 
-    public static final Creator<ProductDAO> CREATOR = new Creator<ProductDAO>() {
+    public static final Creator<Product> CREATOR = new Creator<Product>() {
         @Override
-        public ProductDAO createFromParcel(Parcel in) {
-            return new ProductDAO(in);
+        public Product createFromParcel(Parcel in) {
+            return new Product(in);
         }
 
         @Override
-        public ProductDAO[] newArray(int size) {
-            return new ProductDAO[size];
+        public Product[] newArray(int size) {
+            return new Product[size];
         }
     };
 
