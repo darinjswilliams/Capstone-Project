@@ -3,85 +3,132 @@ package com.consumer.bnform.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
+import java.util.List;
+
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity(tableName = "recall")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor(onConstructor = @__({@Ignore}))
 
 public class Recall implements Parcelable {
 
-    private Integer id;
+    @PrimaryKey
+    @SerializedName("RecallID")
+    @Expose
+    private Integer recallId;
 
-    private Integer mRecallNumber;
+    @SerializedName("RecallNumber")
+    @Expose
+    private Integer recallNumber;
 
+    @SerializedName("RecallDate")
+    @Expose
     private Date mRecallDate;
 
+    @SerializedName("Description")
+    @Expose
     private String mDescription;
 
+    @SerializedName("URL")
+    @Expose
     private String mUrl;
 
+    @SerializedName("Title")
+    @Expose
     private String mTitle;
 
+    @Ignore
     private String mConsumerContact;
 
+    @SerializedName("LastPublishDate")
+    @Expose
     private String mLastPublishDate;
 
-    private Product products;
+    @Ignore
+    private List<Product> mProducts;
 
-    private Inconjuctions mInconjuctions;
+    @Ignore
+    private List<Inconjuctions> mInconjuctions;
 
-    private Images mImage;
+    @Ignore
+    private List<Images> mImage;
 
-    private Injuries mInjuries;
+    @Ignore
+    private List<Injuries> mInjuries;
 
-    private Manufacturers mManufacturers;
+    @Ignore
+    private List<Manufacturers> mManufacturers;
 
-    private Retailers mRetailers;
+    @Ignore
+    private List<Retailers> mRetailers;
 
-    private Importers mImporters;
+    @Ignore
+    private List<Importers> mImporters;
 
-    private Distributors mDistributors;
+    @Ignore
+    private List<Distributors> mDistributors;
 
+    @SerializedName("soldAtLabel")
+    @Expose
     private String mSoldAtLabel;
 
-    private ManufacturerCountries mManufacturerCountries;
+    @Ignore
+    private List<ManufacturerCountries> mManufacturerCountries;
 
-    private ProductUPC mProductUPC;
+    @Ignore
+    private List<ProductUPC> mProductUPC;
 
-    private Hazards mHazards;
+    @Ignore
+    private List<Hazards> mHazards;
 
-    private Remedies mRemedies;
+    @Ignore
+    private List<Remedies> mRemedies;
 
-    private RemedyOptions mRemedyOptions;
+    @Ignore
+    private List<RemedyOptions> mRemedyOptions;
 
 
     protected Recall(Parcel in) {
         if (in.readByte() == 0) {
-            id = null;
+            recallId = null;
         } else {
-            id = in.readInt();
+            recallId = in.readInt();
         }
         if (in.readByte() == 0) {
-            mRecallNumber = null;
+            recallNumber = null;
         } else {
-            mRecallNumber = in.readInt();
+            recallNumber = in.readInt();
         }
         mDescription = in.readString();
         mUrl = in.readString();
         mTitle = in.readString();
         mConsumerContact = in.readString();
         mLastPublishDate = in.readString();
-        products = in.readParcelable(Product.class.getClassLoader());
-        mInconjuctions = in.readParcelable(Inconjuctions.class.getClassLoader());
-        mImage = in.readParcelable(Images.class.getClassLoader());
-        mInjuries = in.readParcelable(Injuries.class.getClassLoader());
-        mManufacturers = in.readParcelable(Manufacturers.class.getClassLoader());
-        mRetailers = in.readParcelable(Retailers.class.getClassLoader());
-        mImporters = in.readParcelable(Importers.class.getClassLoader());
-        mDistributors = in.readParcelable(Distributors.class.getClassLoader());
+        mProducts = in.createTypedArrayList(Product.CREATOR);
+        mInconjuctions = in.createTypedArrayList(Inconjuctions.CREATOR);
+        mImage = in.createTypedArrayList(Images.CREATOR);
+        mInjuries = in.createTypedArrayList(Injuries.CREATOR);
+        mManufacturers = in.createTypedArrayList(Manufacturers.CREATOR);
+        mRetailers = in.createTypedArrayList(Retailers.CREATOR);
+        mImporters = in.createTypedArrayList(Importers.CREATOR);
+        mDistributors = in.createTypedArrayList(Distributors.CREATOR);
         mSoldAtLabel = in.readString();
-        mManufacturerCountries = in.readParcelable(ManufacturerCountries.class.getClassLoader());
-        mProductUPC = in.readParcelable(ProductUPC.class.getClassLoader());
-        mHazards = in.readParcelable(Hazards.class.getClassLoader());
-        mRemedies = in.readParcelable(Remedies.class.getClassLoader());
-        mRemedyOptions = in.readParcelable(RemedyOptions.class.getClassLoader());
+        mManufacturerCountries = in.createTypedArrayList(ManufacturerCountries.CREATOR);
+        mProductUPC = in.createTypedArrayList(ProductUPC.CREATOR);
+        mHazards = in.createTypedArrayList(Hazards.CREATOR);
+        mRemedies = in.createTypedArrayList(Remedies.CREATOR);
+        mRemedyOptions = in.createTypedArrayList(RemedyOptions.CREATOR);
     }
 
     public static final Creator<Recall> CREATOR = new Creator<Recall>() {
@@ -103,36 +150,36 @@ public class Recall implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        if (id == null) {
+        if (recallId == null) {
             parcel.writeByte((byte) 0);
         } else {
             parcel.writeByte((byte) 1);
-            parcel.writeInt(id);
+            parcel.writeInt(recallId);
         }
-        if (mRecallNumber == null) {
+        if (recallNumber == null) {
             parcel.writeByte((byte) 0);
         } else {
             parcel.writeByte((byte) 1);
-            parcel.writeInt(mRecallNumber);
+            parcel.writeInt(recallNumber);
         }
         parcel.writeString(mDescription);
         parcel.writeString(mUrl);
         parcel.writeString(mTitle);
         parcel.writeString(mConsumerContact);
         parcel.writeString(mLastPublishDate);
-        parcel.writeParcelable(products, i);
-        parcel.writeParcelable(mInconjuctions, i);
-        parcel.writeParcelable(mImage, i);
-        parcel.writeParcelable(mInjuries, i);
-        parcel.writeParcelable(mManufacturers, i);
-        parcel.writeParcelable(mRetailers, i);
-        parcel.writeParcelable(mImporters, i);
-        parcel.writeParcelable(mDistributors, i);
+        parcel.writeTypedList(mProducts);
+        parcel.writeTypedList(mInconjuctions);
+        parcel.writeTypedList(mImage);
+        parcel.writeTypedList(mInjuries);
+        parcel.writeTypedList(mManufacturers);
+        parcel.writeTypedList(mRetailers);
+        parcel.writeTypedList(mImporters);
+        parcel.writeTypedList(mDistributors);
         parcel.writeString(mSoldAtLabel);
-        parcel.writeParcelable(mManufacturerCountries, i);
-        parcel.writeParcelable(mProductUPC, i);
-        parcel.writeParcelable(mHazards, i);
-        parcel.writeParcelable(mRemedies, i);
-        parcel.writeParcelable(mRemedyOptions, i);
+        parcel.writeTypedList(mManufacturerCountries);
+        parcel.writeTypedList(mProductUPC);
+        parcel.writeTypedList(mHazards);
+        parcel.writeTypedList(mRemedies);
+        parcel.writeTypedList(mRemedyOptions);
     }
 }

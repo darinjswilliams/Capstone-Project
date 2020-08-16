@@ -16,4 +16,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="scan_icon_menu">Scan</string>
+    <string name="topalerts">High Alerts</string>
+    <string name="additionlalerts">Additional Alerts</string>
+    <string name="critial_alert">Critical Alert</string>
+    <string name="moderate_alert">"Moderate "</string>
+    <string name="low_alert">Low Alerts</string>
+    <string name="placeholder">PlaceHolder</string>
+    <string name="textview">Title of Product</string>
+    <string name="dateAndTime">Date and Time</string>
+    <string name="description">Description of Product</string>
 </resources>

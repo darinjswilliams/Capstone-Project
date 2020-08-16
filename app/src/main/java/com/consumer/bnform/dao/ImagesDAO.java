@@ -1,7 +1,7 @@
 package com.consumer.bnform.dao;
 
 import com.consumer.bnform.dto.Distributors;
-import com.consumer.bnform.dto.Manufacturers;
+import com.consumer.bnform.dto.Images;
 
 import java.util.List;
 
@@ -11,12 +11,12 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 @Dao
-public interface ManufacturesDAO {
+public interface ImagesDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertTask(List<Manufacturers> manufacturersList);
+    void insertTask(List<Images> imagesList);
 
-    @Query("Select * from manufacturers where recallId = :recallId")
-    List<Manufacturers> getManufacturers(int recallId);
+    @Query("Select * from images where recallId = :recallId")
+    List<Images> getImages(int recallId);
 
 }

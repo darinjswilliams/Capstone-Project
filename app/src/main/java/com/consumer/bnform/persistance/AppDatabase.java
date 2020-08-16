@@ -5,7 +5,10 @@ import android.util.Log;
 
 import com.consumer.bnform.dao.DistributorsDAO;
 import com.consumer.bnform.dao.HazardsDAO;
+import com.consumer.bnform.dao.ImagesDAO;
+import com.consumer.bnform.dao.ImportersDAO;
 import com.consumer.bnform.dao.InjuriesDAO;
+import com.consumer.bnform.dao.ManufacturerCountriesDAO;
 import com.consumer.bnform.dao.ManufacturesDAO;
 import com.consumer.bnform.dao.ProductsDAO;
 import com.consumer.bnform.dao.RecallDAO;
@@ -22,17 +25,19 @@ import com.consumer.bnform.dto.Manufacturers;
 import com.consumer.bnform.dto.Product;
 import com.consumer.bnform.dto.ProductUPC;
 import com.consumer.bnform.dto.Recall;
+import com.consumer.bnform.dto.Remedies;
 import com.consumer.bnform.dto.RemedyOptions;
 import com.consumer.bnform.dto.Retailers;
 
-import androidx.room.Dao;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
 //ADD THE TYPE CONVERTERS SO ROOM KNOWS HOW TO DEAL WITH List CONVERSION
 @Database(entities = {Distributors.class, Hazards.class, Images.class, Importers.class, Inconjuctions.class, Injuries.class, ManufacturerCountries.class,
-Manufacturers.class, Product.class, ProductUPC.class, Recall.class, RemedyOptions.class, Retailers.class}, version = 3,  exportSchema = false)
+Manufacturers.class, Product.class, ProductUPC.class, Recall.class, Remedies.class, RemedyOptions.class, Retailers.class}, version = 4,  exportSchema = false)
+@TypeConverters(DateTypeConverter.class)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String LOG_TAG = AppDatabase.class.getSimpleName();
@@ -61,7 +66,10 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract DistributorsDAO distributorsDAO();
     public abstract HazardsDAO hazardsDAO();
+    public abstract ImagesDAO imagesDAO();
+    public abstract ImportersDAO importersDAO();
     public abstract InjuriesDAO injuriesDAO();
+    public abstract ManufacturerCountriesDAO manufacturerCountriesDAO();
     public abstract ManufacturesDAO manufacturesDAO();
     public abstract ProductsDAO productsDAO();
     public abstract RecallDAO recallDAO();

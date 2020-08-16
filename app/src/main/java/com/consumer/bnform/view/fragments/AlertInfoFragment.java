@@ -42,10 +42,7 @@ public class AlertInfoFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        Bundle args = getArguments();
         Log.i(TAG, "onViewCreated: AlertInfoFragment");
-        ((TextView) view.findViewById(R.id.alert_info_text))
-                .setText(Integer.toString(args.getInt(ARG_OBJ)));
 
         super.onViewCreated(view, savedInstanceState);
     }

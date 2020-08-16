@@ -3,9 +3,50 @@ package com.consumer.bnform.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import static androidx.room.ForeignKey.CASCADE;
+
+
+@Entity(tableName = "Images", foreignKeys = @ForeignKey(
+        entity = Recall.class,
+        parentColumns = "recallId",
+        childColumns = "recallId",
+        onDelete = CASCADE
+
+),
+        indices = @Index(value = "recallId", name = "idx_images_recall_id")
+)
+@Data
+@NoArgsConstructor
+@AllArgsConstructor(onConstructor = @__({@Ignore}))
 public class Images implements Parcelable {
 
+    @PrimaryKey(autoGenerate = true)
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+
+    @SerializedName("RecallID")
+    @Expose
+    private Integer recallId;
+
+    @SerializedName("URL")
+    @Expose
     private String url;
+
+    @SerializedName("Caption")
+    @Expose
     private String caption;
 
     protected Images(Parcel in) {

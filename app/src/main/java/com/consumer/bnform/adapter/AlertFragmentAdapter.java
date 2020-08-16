@@ -1,10 +1,8 @@
 package com.consumer.bnform.adapter;
 
-import android.os.Bundle;
-import android.util.Log;
-
-import com.consumer.bnform.view.fragments.AlertFragment;
 import com.consumer.bnform.view.fragments.AlertInfoFragment;
+import com.consumer.bnform.view.fragments.LowAlertFragment;
+import com.consumer.bnform.view.fragments.TopAlertFragment;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -20,22 +18,25 @@ public class AlertFragmentAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        //TODO return items in recycler
-        return 2;
+        //Return tab count, place value in constant
+        return 3;
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        Fragment alertFragment = new AlertInfoFragment();
-        Bundle args = new Bundle();
 
-        Log.i(TAG, "createFragment:");
+        switch(position){
+            case 0:
+                return new TopAlertFragment();
+            case 1:
+                return new LowAlertFragment();
+            default:
+                return new AlertInfoFragment();
+        }
 
-        //Alerts tabs
-        args.putInt(AlertInfoFragment.ARG_OBJ, position + 1);
-        alertFragment.setArguments(args);
 
-        return alertFragment;
     }
+
+
 }
